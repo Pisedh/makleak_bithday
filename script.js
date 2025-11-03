@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const HARDCODED_NAME = "Mak Leak my lovely girl💖";
   const HARDCODED_DOB = "03/November/2004"; // YYYY-MM-DD format
   const HARDCODED_WISH = `🎉 Happy Birthday, Mak
-        You’re like Wi-Fi — when you’re around, everything just feels better (except maybe our sleep schedule 😆).
+        You’re like Wi-Fi — when you’re around, everything just feels better.
         I hope your day’s filled with laughter, good food, and the kind of happiness that sticks around for days.
         You deserve all the good things today — just relax, enjoy, and let the world treat you kindly. 🎂💫`;
 
