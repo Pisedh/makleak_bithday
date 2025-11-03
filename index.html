@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epic Birthday Surprise Portal 🌌✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+  <!-- Background Particles Canvas -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Mute Toggle -->
+  <button id="muteBtn" class="mute-btn">🔊</button>
+
+  <!-- Intro: Just a Button Now -->
+  <section id="intro" class="intro">
+    <div class="glass-card">
+      <h1 class="welcome-text">Prepare for Magic 💫</h1>
+      <!-- NEW: Single Button Replaces Form -->
+      <button id="startBtn" class="glow-btn">Begin the Journey ✨</button>
+    </div>
+    <!-- Ambient Intro Music -->
+    <audio id="ambientIntro" loop preload="auto">
+      <source src="https://freesound.org/data/previews/612/612611_5674468-lq.mp3" type="audio/mpeg"> <!-- Mystical harp loop -->
+    </audio>
+    <!-- Preview Chime -->
+    <audio id="previewChime" preload="auto">
+      <source src="https://freesound.org/data/previews/171/171671_2437355-lq.mp3" type="audio/mpeg"> <!-- Gentle sparkle -->
+    </audio>
+  </section>
+
+  <!-- Preview Page (Shows Hardcoded Name/DOB) -->
+  <section id="preview" class="preview">
+    <div class="preview-card">
+      <h2 class="preview-name" id="previewName"></h2>
+      <p class="preview-dob" id="previewDob"></p>
+      <button id="portalBtn" class="portal-btn">Enter the Portal 🌌</button>
+    </div>
+  </section>
+
+  <!-- First Teleport Animation -->
+  <section id="teleportPhase" class="teleport-phase">
+    <canvas id="teleportCanvas"></canvas>
+    <audio id="portalSound" preload="auto">
+      <source src="https://freesound.org/data/previews/387/387739_7037-lq.mp3" type="audio/mpeg"> <!-- Sci-fi warp hum -->
+    </audio>
+    <audio id="teleportWhoosh" preload="auto">
+      <source src="https://freesound.org/data/previews/344/344518_5674468-lq.mp3" type="audio/mpeg"> <!-- Echo whoosh -->
+    </audio>
+  </section>
+
+  <!-- Flower Drawing Phase -->
+  <section id="flowerPhase" class="flower-phase">
+    <canvas id="flowerCanvas"></canvas>
+    <audio id="bloomSound" loop preload="auto">
+      <source src="https://freesound.org/data/previews/456/456319_7037-lq.mp3" type="audio/mpeg"> <!-- Petal unfurl chimes -->
+    </audio>
+    <audio id="bloomReverb" preload="auto">
+      <source src="https://freesound.org/data/previews/321/321439_5674468-lq.mp3" type="audio/mpeg"> <!-- Soft wind reverb -->
+    </audio>
+  </section>
+
+  <!-- Gift Box -->
+  <section id="giftPhase" class="gift-phase">
+    <div class="gift-container">
+      <div id="giftBox" class="gift-box">
+        <!-- Lid with Ribbon -->
+        <div class="box-lid">
+          <div class="ribbon-bow"></div>
+          <div class="lid-shine"></div>
+        </div>
+        <!-- Body -->
+        <div class="box-body">
+          <div class="body-texture"></div>
+          <div class="body-shadow"></div>
+        </div>
+      </div>
+    </div>
+    <audio id="hoverCreak" preload="auto">
+      <source src="https://freesound.org/data/previews/269/269035_4563534-lq.mp3" type="audio/mpeg"> <!-- Wooden creak -->
+    </audio>
+    <audio id="ribbonSnap" preload="auto">
+      <source src="https://freesound.org/data/previews/412/412890_7037-lq.mp3" type="audio/mpeg"> <!-- Ribbon pop -->
+    </audio>
+    <audio id="openSound" preload="auto">
+      <source src="https://freesound.org/data/previews/387/387232_5121236-lq.mp3" type="audio/mpeg"> <!-- Gift open jingle -->
+    </audio>
+    <audio id="treasureSound" preload="auto">
+      <source src="https://freesound.org/data/previews/344/344232_5674468-lq.mp3" type="audio/mpeg"> <!-- Treasure glow -->
+    </audio>
+  </section>
+
+  <!-- Rare Golden Portal -->
+  <section id="rarePortalPhase" class="rare-portal-phase">
+    <canvas id="rarePortalCanvas"></canvas>
+    <audio id="goldenChime" loop preload="auto">
+      <source src="https://freesound.org/data/previews/456/456319_7037-lq.mp3" type="audio/mpeg"> <!-- Luxurious chimes -->
+    </audio>
+    <audio id="etherealWhoosh" preload="auto">
+      <source src="https://freesound.org/data/previews/387/387739_7037-lq.mp3" type="audio/mpeg"> <!-- Ethereal whoosh -->
+    </audio>
+  </section>
+
+  <!-- Letter Reveal -->
+  <section id="letterPhase" class="letter-phase">
+    <div class="letter-card">
+      <div class="envelope-flap"></div>
+      <h2 id="letterName" class="name-cursive"></h2>
+      <p id="letterDob" class="dob"></p>
+      <p id="letterWish" class="wish"></p>
+    </div>
+    <audio id="fanfareSound" preload="auto">
+      <source src="https://freesound.org/data/previews/171/171671_2437355-lq.mp3" type="audio/mpeg"> <!-- Celebratory fanfare -->
+    </audio>
+    <audio id="confettiPop" preload="auto">
+      <source src="https://freesound.org/data/previews/412/412890_7037-lq.mp3" type="audio/mpeg"> <!-- Confetti burst -->
+    </audio>
+    <audio id="wishVoice" preload="auto">
+      <source src="" type="audio/mpeg"> <!-- TTS placeholder -->
+    </audio>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
